@@ -49,7 +49,7 @@
 // console.log(twoYearsAgo);
 // var twoYearsAgo = yearAsAString + 2;
 // console.log(twoYearsAgo);
-console.log(.1 + .2);
+// console.log(.1 + .2);
 
 
 // BOOLEANS----------------------------------
@@ -71,13 +71,13 @@ console.log(.1 + .2);
 // i++; i += 1
 // console.log(i);
 // i--
-i = 1;
-// Post fixing (i++) is done after the line is run
-console.log(i++);
-console.log(i);
-// Prefixing (++i) will run as soon as it is seen
-console.log(++i);
-console.log(i);
+// i = 1;
+// // Post fixing (i++) is done after the line is run
+// console.log(i++);
+// console.log(i);
+// // Prefixing (++i) will run as soon as it is seen
+// console.log(++i);
+// console.log(i);
 // Order of operations works the same as in python and 3rd grade
 // * and / always come before + and -, then left to right, () overrides anything
 // 2 + 3 * 4 = 14, not 20
@@ -106,12 +106,64 @@ console.log(i);
 // if(response === 16){
 //   console.log("You must be in the April 2017 class")
 // };
-// You can use the Number function to convert a string into a number
+// You can use the Number method to convert a string into a number
 // if(Number(response) === 16){
 //   console.log("You must be in the April 2017 class")
 // }else{
 //   console.log("You are NOT in the April class!")
 // };
+
+// console.log(Number("The meaning of life"));
+// var userInput = prompt("please enter a number between 1 and 10");
+// var inputAsNumber = parseInt(userInput);
+// if(isNaN(inputAsNumber)){
+//   console.log("This is not a number")
+// }else{
+//   console.log(inputAsNumber) 
+// };
+// if(!isNaN(inputAsNumber)){
+//   console.log("Thanks for entering a number")
+// }else{
+//   console.log("Please enter a number") 
+// };
+
+// Continue asking for a number 1-10,
+// if they give you a number less than 1 alert them (console)
+// if they give you a number greater than 10 alert them (console)
+// if they give you something that is not a number alert them (console)
+// if they guess the number congratulate them (console)
+// if they don't guess the number console them (console)
+// if the user is within 2 tell them they're close
+// if they weren't within 2 mock them
+
+// Window (browser) has a math object, so you can do var randomNumber = Math.random()
+// this will generate a 16 digit decimal between 1 and 0
+
+// var number = parseInt(Math.random() * 10);
+// // var number = Math.round(Math.random() * 10);
+// // var number = Math.ceil(Math.random() * 10); ceil will round it up, floor will round down
+// var userAnswer = prompt("Please enter a number between 1 and 10, including 1 and 10");
+// var answerNumber = parseInt(userAnswer);
+
+// if (isNaN(answerNumber)){
+//   console.log("That wasn't a number, please enter a number between 1 and 10, including 1 and 10");
+// }
+// else if (answerNumber === number){
+//   console.log("Great job! You guessed it!");
+// }
+// else if (answerNumber < 1){
+//  console.log("That was less than 1, please enter a number between 1 and 10, including 1 and 10"); 
+// }
+// else if (answerNumber > 10){
+//   console.log("That was greater than 10, please enter a number between 1 and 10, including 1 and 10");
+// }
+// // else if (Math.abs(answerNumber - number) <=2)    This is another way to do this one
+// else if (answerNumber >= (number - 2) && answerNumber <= (number + 2)){
+//   console.log("Wow, that was soooo close, you were within 2 of the number!");
+// }else{
+//   console.log("Haha, wow, you are not good at this.")
+// }
+
 
 
 
