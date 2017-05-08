@@ -20,8 +20,8 @@
       <button class="btn btn-default" onclick="rollDice();">Fight!</button>
     </div>
     <div class="text-center">
-      <img src="dragon-assets/d1.gif">
-      <img src="dragon-assets/d1.gif">
+      <img src="dragon-assets/d1.gif" name="die1image">
+      <img src="dragon-assets/d1.gif" name="die2image">
     </div>
   <div>
     
@@ -30,7 +30,15 @@
 
   <script type="text/javascript">
   function rollDice(){
-    console.log("The user clicked the fight button")
+    // console.log("The user clicked the fight button")
+    var randomDie1 = Math.ceil(Math.random()*6);
+    var randomDie2 = Math.ceil(Math.random()*6);
+    // console.log(randomDie1);
+    // console.log(randomDie2);
+    var die1 = "d" + randomDie1 + ".gif";
+    var die2 = "d" + randomDie2 + ".gif";
+    document.images.die1image.src="dragon-assets/" + die1;
+    document.images.die2image.src="dragon-assets/" + die2;
   };
   </script>
 </body>
