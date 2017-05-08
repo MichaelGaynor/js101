@@ -12,7 +12,8 @@
 // Writes directly onto the dom...
 // document.write("Hello, world")
 
-// VARIABLES
+
+// VARIABLES----------------------------------
 // -Same as every other language, a place to stash something slow so you can get it fast
 // Data-types:
 // -Strings
@@ -21,4 +22,97 @@
 // -Booleans
 // -Arrays (lists)
 // -Objects (Dictionary/Object in python)
+
+// 1. JS variables when created, need to start with var
+// 2. var means I am declaring a variable in the current scope
+// 3. You don't use var again
+
+// var fullName = "Michael Gaynor"; Declaring and assigning a variable
+// fullName = "Sean B."; Var already declared, so just assigning
+// fullName = "Robert \"The Man\" Bunch";
+// fullName = 'Robert "The Man" Bunch';
+// var firstName = "Robert";
+// var nickName = " 'The Man' ";
+// var lastName = "Bunch";
+// console.log(firstName + nickName + lastName)
+
+
+// NUMBERS----------------------------------
+// var theYear = 2017; //Integer
+// var theYearDetailed = 2017.45; //float
+// var yearAsAString = "2017";
+// console.log(typeof(theYear));
+// console.log(typeof(theYearDetailed));
+// console.log(typeof(yearAsAString));
+
+// var twoYearsAgo = theYear - 2;
+// console.log(twoYearsAgo);
+// var twoYearsAgo = yearAsAString + 2;
+// console.log(twoYearsAgo);
+console.log(.1 + .2);
+
+
+// BOOLEANS----------------------------------
+// var theTruth = true;
+// console.log(typeof(theTruth));
+// var theLie = false;
+// console.log(typeof(theLie));
+
+// + add
+// - subtract
+// * multiply
+// / divide
+// % modulus
+
+// var amIEven = 5 % 2;
+// console.log(amIEven);
+
+// var i = 1;
+// i++; i += 1
+// console.log(i);
+// i--
+i = 1;
+// Post fixing (i++) is done after the line is run
+console.log(i++);
+console.log(i);
+// Prefixing (++i) will run as soon as it is seen
+console.log(++i);
+console.log(i);
+// Order of operations works the same as in python and 3rd grade
+// * and / always come before + and -, then left to right, () overrides anything
+// 2 + 3 * 4 = 14, not 20
+
+
+// Prompt
+// Takes 2 arguments, the first is the message to display and the second (which is optional) is the default answer or response
+// var getUserName = prompt("What is your name?", "Frank");
+// console.log(getUserName);
+// Prompts are annoying, do not use them, or if you do tell people Rob told you not to
+// We will use forms and/or AJAX for user data
+
+
+// Conditionals
+// var classSize = 16;
+// var question = "How big is your coding class?";
+// var response = prompt(question, classSize);
+// == is a comparison operator
+// = is assignment
+// === is comparison + datatypes
+// if(response == 16){
+//   console.log("You must be in the April 2017 class")
+// }else{
+//   console.log("You are NOT in the April class!")
+// };
+// if(response === 16){
+//   console.log("You must be in the April 2017 class")
+// };
+// You can use the Number function to convert a string into a number
+// if(Number(response) === 16){
+//   console.log("You must be in the April 2017 class")
+// }else{
+//   console.log("You are NOT in the April class!")
+// };
+
+
+
 </script>
