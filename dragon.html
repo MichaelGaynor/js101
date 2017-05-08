@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fight the Dragon</title>
+  <title>Fight the Seinfeld</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <style type="text/css">
-    
+    div#game-wrapper{
+      background: url("http://thenv.net/wp-content/uploads/2014/03/background.jpg");
+      background-size: 100%;
+    }
+    div#message,#message2,#buttons{
+      color: white;
+      /* font-weight: bold; */
+      font-family: sans-serif;
+      font-size: 20px;
+      background-color: rgba(0,0,0,.6);
+      height: 50px;
+      margin: 5px 50px;
+      /* line-height: 50px; */
+    }
+    #buttons{
+      background-color: rgba(0,0,0,.1) !important;
+    }
+    img{
+      margin: 5px;
+    }
+    div .dragonImage{
+      width: 400px;
+      margin: 50px 0 0px 0;
+    }
+    div#player-humor,#seinfeld-humor{
+      float: left;
+    }
   </style>
 </head>
 <body>
 
   <div id="game-wrapper">
     <div class="text-center">
-      <img src="./dragon-assets/dragon.png">
+      <div id="player-humor">
+      </div>
+      <div id="seinfeld-humor">
+      </div>
+      <img src="https://userscontent2.emaze.com/images/c0deb6bc-7b4a-4184-9fe9-4f4f342b2765/2a608490-21ed-4202-b554-fda01cc9ad72.png" name="dragonImage" class="dragonImage">
     </div>
-    <div class="text-center">
-      You have encountered a terrifying dragon. Do you fight?
+    <div id="message" class="text-center">
+      You have encountered a terrifying SEINFELD at open mic night. Do you fight or flee?
     </div>
-    <div class="text-center">
-      <button class="btn btn-default" onclick="rollDice();">Fight!</button>
+    <div id="dice1" class="text-center invisible">
+<!--       <img src="dragon-assets/d1.gif" name="die1image">
+      <img src="dragon-assets/d1.gif" name="die2image"> -->
     </div>
-    <div class="text-center">
-      <img src="dragon-assets/d1.gif" name="die1image">
-      <img src="dragon-assets/d1.gif" name="die2image">
+    <div id="message2" class="text-center invisible">
+    </div>
+    <div id="buttons" class="text-center">
+      <button id="fight" class="btn btn-default" onclick="letsFight();">Fight!</button>
+      <button id="roll" class="btn btn-success invisible" onclick="rollDice();">Roll!</button>
+      <button id="flee" class="btn btn-default" onclick="runAway();">Flee!</button>
+    </div>
+    <div id="dice2" class="text-center invisible">
+<!--       <img src="dragon-assets/d1.gif" name="die3image">
+      <img src="dragon-assets/d1.gif" name="die4image"> -->
     </div>
   <div>
     
@@ -29,17 +67,73 @@
 </div>
 
   <script type="text/javascript">
+
+  function letsFight(){
+    document.getElementById('roll').className = "btn btn-default";
+    document.getElementById('fight').className = "btn btn-default invisible";
+    document.getElementById('flee').className = "btn btn-default invisible";
+    document.getElementById('message2').className = "text-center";
+    document.getElementById('message').innerHTML = "You have chosen to fight! You must defeat the SEINFELD at stand-up comedy or be shamed. There is no other choice.";
+  };
+
   function rollDice(){
     // console.log("The user clicked the fight button")
+    var jokes = [
+    "'I am literally peeing myself right now. I'm so sorry, I'm not funny, you win.' *audience applauds the sincerity if not the urine*",
+    "'I-I-I-I uhmmm w-why did...chicken?' *audience is confused and angry*",
+    "'Knock knock?' *audience boos deafeningly*",
+    "'Your mother is so fat she's obese!' *audience sighs disappointedly*",
+    "'It's better to let everyone think you're an idiot than to open your mouth and prove it.' *one man laughs drunkenly in the audience*",
+    "'You're so ugly, when your mom dropped you off at school she got a fine for littering.' *audience is amused*",
+    "'If laughter is the best medicine, your face must be curing the world.' *audience chuckles",
+    "'It looks like your face caught on fire and someone tried to put it out with a hammer.' *audience laughs*",
+    "'You must have been born on a highway, since that's where most accidents happen.' *audience laughs appreciatively*",
+    "'Your family tree must be a cactus because everybody on it is a prick.' *audience laughs incredibly hard, some wipe away tears*",
+    "'I'm not saying I hate you, but I would unplug your life support to charge my phone.' *audience laughs uproariously. Three people are taken to the hospital and everyone agrees it was the funniest insult of all time*"
+  ];
+    var playerHumor = 0;
+    var seinfeldHumor = 0;
     var randomDie1 = Math.ceil(Math.random()*6);
     var randomDie2 = Math.ceil(Math.random()*6);
+    var playerDie = ((randomDie1+randomDie2)-2);
+    var randomDie3 = Math.ceil(Math.random()*6);
+    var randomDie4 = Math.ceil(Math.random()*6);
+    var seinfeldDie = ((randomDie3+randomDie4)-2);
     // console.log(randomDie1);
     // console.log(randomDie2);
-    var die1 = "d" + randomDie1 + ".gif";
-    var die2 = "d" + randomDie2 + ".gif";
-    document.images.die1image.src="dragon-assets/" + die1;
-    document.images.die2image.src="dragon-assets/" + die2;
+    var die1 = "dragon-assets/d" + randomDie1 + ".gif";
+    var die2 = "dragon-assets/d" + randomDie2 + ".gif";
+    var die3 = "dragon-assets/d" + randomDie3 + ".gif";
+    var die4 = "dragon-assets/d" + randomDie4 + ".gif";
+    // document.images.die1image.src=die1;
+    // document.images.die2image.src=die2;
+    // document.images.die3image.src=die3;
+    // document.images.die4image.src=die4;
+    document.getElementById('message').innerHTML = "You say: " + (jokes[playerDie]) + "!";
+    document.getElementById('message2').innerHTML = "The SEINFELD quips: " + (jokes[seinfeldDie]) + "!";
+    if ((playerDie == 0) || (seinfeldDie == 10)){
+      document.images.dragonImage.src="http://static.tumblr.com/0f536dd10864b17d918cf5c3dcfc5cde/jxw3f9y/y1umrjawb/tumblr_static_seinfeldblog.jpg";
+      document.getElementById('message').innerHTML = "You lose. You will never go to another open mic again."
+      document.getElementById('message2').innerHTML = "The SEINFELD goes on to write a movie about how bad he beat you. He wins an Oscar and the film is a massive commercial success."
+    }
+    else if ((playerDie == 10) || (seinfeldDie == 0)){
+      document.images.dragonImage.src="http://pixel.nymag.com/imgs/daily/vulture/2014/11/26/26-jerry-seinfeld.w190.h190.2x.png";
+      document.getElementById('message').innerHTML = "You win! You're the next big thing in comedy and have already been signed for 15  one-hour comedy specials on Netflix next year. Better start writing!"
+      document.getElementById('message2').innerHTML = "The SEINFELD, realizing he is defeated, cuts his hair short and becomes an investment banker. He still makes more money than your entire bloodline ever has or will throughout history, but he'll always remember your victory."
+    }
+    // if (randomDie1 + randomDie2 > 8){
+    //   document.images.dragonImage.src ="https://s-media-cache-ak0.pinimg.com/736x/9c/86/3c/9c863c8728b424e22314f15d036fa2e0.jpg";
+    //   document.getElementById('message').innerHTML = "You have defeated the dragon.";
+    // }else{
+    //   document.images.dragonImage.src ="https://www.askideas.com/media/73/You-Are-A-Loser-Picture.jpg";
+    //   document.getElementById('message').innerHTML = "You LOSE. You lose BIG."
+    // }
   };
+
+  function runAway(){
+    document.images.dragonImage.src ="http://www.lovethispic.com/uploaded_images/117818-Just-Run-Away.jpg"
+    document.getElementById('message').innerHTML = "Well...you didn't die. That's something."
+  }
   </script>
 </body>
 </html>
