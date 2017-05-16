@@ -1,0 +1,49 @@
+<!-- Scope  -->
+<!-- - Determines what can see a variable -->
+<!-- - Global, top level, EVERYONE can see and change a global -->
+<!-- - - in Python these are all the way to the left -->
+
+<!-- - Local -->
+<!-- - - Inside a function, only visible internally and to child functions -->
+
+<script type="text/javascript">
+  // var imAGlobal = 1;
+  // function checkScope(){
+  //   // Despite the misleading name this is a local variable not visible outside (above) this function
+  //   var imAGlobal = 2;
+  //   console.log(imAGlobal);
+  //   // Unless you have specific reason to do this, AVOID naming local and global variables the same thing
+  //   // Putting window. in front of anything will access the global scope. So we can still access the global variable even though we have a local variable with the same name, but we have to tell it we want the global copy
+  //   console.log(window.imAGlobal);
+  //   function child(){
+  //     imAGlobal = 3;
+  //     console.log(imAGlobal);
+  //   }
+  //   child();
+  // }
+  // console.log(window.checkScope);
+  // checkScope();
+
+// var x = 1;
+// function hoistingTest(){
+//   console.log(x);
+//   var x = 2;
+//   y = 3;
+// };
+
+// console.log(y);
+// hoistingTest();
+// console.log(y);
+// The result is "undefined" because javascript hoists variables, turning the function to:
+// function hoistingTest(){
+//   var x;
+//   console.log(x);
+//   x = 2;
+// }
+
+// HOISTING:
+// - Put your vars at the top or javascript will do it for you
+
+
+
+</script>
